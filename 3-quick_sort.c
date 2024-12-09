@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
-* swap - Swaps two integers in an array and prints the array.
-* @array: The array where the swap occurs.
-* @i: The index of the first element.
-* @j: The index of the second element.
-* @size: The size of the array.
+* swap - Échange deux éléments dans un tableau et affiche le tableau.
+* @array: Le tableau où l'échange se produit.
+* @i: L'index du premier élément.
+* @j: L'index du deuxième élément.
+* @size: La taille du tableau.
 */
 void swap(int *array, int i, int j, size_t size)
 {
@@ -14,18 +14,17 @@ void swap(int *array, int i, int j, size_t size)
 
 	array[i] = array[j];
 	array[j] = temp;
-
 	print_array(array, size);
 }
 
 /**
-* lomuto_partition - Partitions the array using the Lomuto scheme.
-* @array: The array to be partitioned.
-* @low: The starting index of the partition.
-* @high: The ending index of the partition.
-* @size: The size of the array.
+* lomuto_partition - Partitionne le tableau avec le schéma de Lomuto.
+* @array: Le tableau à partitionner.
+* @low: L'index de départ.
+* @high: L'index de fin.
+* @size: La taille du tableau.
 *
-* Return: The index of the pivot after partitioning.
+* Return: L'index du pivot après partitionnement.
 */
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
@@ -47,11 +46,11 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 }
 
 /**
-* quick_sort_recursive - Recursively sorts an array using Quick Sort.
-* @array: The array to be sorted.
-* @low: The starting index of the partition.
-* @high: The ending index of the partition.
-* @size: The size of the array.
+* quick_sort_recursive - Trie récursivement le tableau.
+* @array: Le tableau à trier.
+* @low: L'index de départ.
+* @high: L'index de fin.
+* @size: La taille du tableau.
 */
 void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
@@ -65,15 +64,12 @@ void quick_sort_recursive(int *array, int low, int high, size_t size)
 }
 
 /**
-* quick_sort - Sorts an array of integers in ascending order
-* using Quick Sort with Lomuto partition scheme.
-* @array: The array to be sorted.
-* @size: The size of the array.
+* quick_sort - Trie un tableau d'entiers par ordre croissant.
+* @array: Le tableau à trier.
+* @size: La taille du tableau.
 */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size < 2)
-		return;
-
-	quick_sort_recursive(array, 0, size - 1, size);
+	if (array != NULL && size > 1)
+		quick_sort_recursive(array, 0, size - 1, size);
 }
