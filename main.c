@@ -1,5 +1,10 @@
 #include "sort.h"
 
+/**
+* main - Entry point of the program
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
 	int array[] = {5, 3, 8, 4, 2};
